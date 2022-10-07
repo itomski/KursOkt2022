@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"de.lubowiecki.playground","c":"Starter","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"de.lubowiecki.playground","c":"Starter","l":"Starter()","u":"%3Cinit%3E()"}];updateSearchResults();
