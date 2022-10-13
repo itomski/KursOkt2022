@@ -48,7 +48,25 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [name=" + name + ", description=" + description + ", price=" + price + ", createdAt="
-				+ createdAt + "]";
-	}
+		StringBuilder builder = new StringBuilder();
+		builder.append("Product [name=")
+			   .append(name)
+			   .append(", description=")
+			   .append(description)
+			   .append(", price=")
+			   .append(price)
+			   .append(", createdAt=")
+			   .append(createdAt)
+			   .append("]");
+		
+		return builder.toString();
+	}	
+
+//	@Override
+//	public String toString() {
+//		return "Product [name=" + name + ", description=" + description + ", price=" + price + ", createdAt="
+//				+ createdAt + "]";
+//	}
+	
+	
 }
