@@ -36,12 +36,21 @@ public class App {
 		System.out.println("-----------------------------------------------------------------");
 		
 		for (Product product : management.getAll()) {
-			if(product != null)
-				System.out.printf("%-12s | %-20s | %-10s | %.2f EUR \n", 
-									product.getName(),
-									product.getDescription(),
-									product.getCreatedAt(),
-									product.getPrice());
+			if(product != null) {
+				String s = String.format("%-12s | %-20s | %10s | %10.2f EUR \n", 
+							product.getName(),
+							product.getDescription(),
+							product.getCreatedAt(),
+							product.getPrice());
+				System.out.println(s);
+			}
+
+// printf = sofortige Ausgabe auf der Konsole			
+//				System.out.printf("%-12s | %-20s | %10s | %10.2f EUR \n", 
+//									product.getName(),
+//									product.getDescription(),
+//									product.getCreatedAt(),
+//									product.getPrice());
 			
 		}
 	}
