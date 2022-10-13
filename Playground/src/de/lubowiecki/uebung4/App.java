@@ -9,7 +9,7 @@ public class App {
 		
 		final Scanner scanner = new Scanner(System.in);
 		
-		final ProductManagement management = new ProductManagement(20);
+		final ProductManagement management = new ProductManagement();
 		
 		while(true) {
 			Product p = new Product();

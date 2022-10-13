@@ -1,5 +1,8 @@
 package de.lubowiecki.playground;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class Person { // Pascal case
 	
 	private static int count; // Klasseneigenschaft
@@ -54,5 +57,10 @@ public class Person { // Pascal case
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
 	}
 }
