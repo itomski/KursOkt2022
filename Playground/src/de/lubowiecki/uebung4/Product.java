@@ -8,7 +8,7 @@ public class Product {
 	private String name;
 	private String description;
 	private double price;
-	private LocalDate createdAt;
+	private LocalDate createdAt; // YYYY-MM-dd
 
 	public Product() {
 		createdAt = LocalDate.now();
@@ -60,13 +60,5 @@ public class Product {
 			   .append("]");
 		
 		return builder.toString();
-	}	
-
-//	@Override
-//	public String toString() {
-//		return "Product [name=" + name + ", description=" + description + ", price=" + price + ", createdAt="
-//				+ createdAt + "]";
-//	}
-	
-	
+	}		
 }

@@ -16,6 +16,13 @@ public class OperatorenTest {
 		
 		int a = 1;
 		int b = a++ + ++a + a++; // 1 + 3 + 3
+		
+		a = 1;
+		b = a++ + 10;
+		
+		a = 1;
+		a = a++; // 1, Vormerkung für das Increment wird durch Zuweisung vergessen 
+		
 		System.out.println(a); // 4
 		System.out.println(b); // 7
 		
