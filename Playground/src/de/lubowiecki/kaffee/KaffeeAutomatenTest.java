@@ -14,27 +14,30 @@ public class KaffeeAutomatenTest {
 		KaffeeAutomat automat = new KaffeeAutomat();
 		
 		List<Muenze> rueckgabe = automat.geldRueckgabe();
-		
-		if(rueckgabe.size() > 0) {
-			System.out.println("Rückgabe erfolgt");
-			System.out.println(rueckgabe);
-		}
-		else {
-			System.out.println("Es wurde kein Geld eingezahlt.");
-		}
-		
+//		
+//		if(rueckgabe.size() > 0) {
+//			System.out.println("Rückgabe erfolgt");
+//			System.out.println(rueckgabe);
+//		}
+//		else {
+//			System.out.println("Es wurde kein Geld eingezahlt.");
+//		}
+//		
 		Muenze m = Muenze.get10Cent();
-		System.out.printf("Münzwert: %.2f EUR \n", m.getWert());
-		
 		automat.geldEinwerfen(m);
-		System.out.printf("Eingezahlt: %.2f EUR \n", automat.getSummeGeld());
 		
 		m = Muenze.get20Cent();
 		automat.geldEinwerfen(m);
-		System.out.printf("Eingezahlt: %.2f EUR \n", automat.getSummeGeld());
 		
 		m = Muenze.get50Cent();
 		automat.geldEinwerfen(m);
+		
+		m = Muenze.get50Cent();
+		automat.geldEinwerfen(m);
+		
+		m = Muenze.get20Cent();
+		automat.geldEinwerfen(m);
+		
 		System.out.printf("Eingezahlt: %.2f EUR \n", automat.getSummeGeld());
 		
 		if(automat.kaffeeAnfordern()) {
@@ -43,15 +46,17 @@ public class KaffeeAutomatenTest {
 		else {
 			System.out.println("Geldeinwurf nicht ausreichend.");
 		}
-
-		System.out.printf("Eingezahlt: %.2f EUR \n", automat.getSummeGeld());
-		
-		if(automat.kaffeeAnfordern()) {
-			System.out.println("Kaffee erhalten");
-		}
-		else {
-			System.out.println("Geldeinwurf nicht ausreichend.");
-		}
+//
+//		System.out.printf("Eingezahlt: %.2f EUR \n", automat.getSummeGeld());
+//		
+//		if(automat.kaffeeAnfordern()) {
+//			System.out.println("Kaffee erhalten");
+//		}
+//		else {
+//			System.out.println("Geldeinwurf nicht ausreichend.");
+//		}
+//		
+		rueckgabe = automat.geldRueckgabe();
 		
 		if(rueckgabe.size() > 0) {
 			System.out.println("Rückgabe erfolgt");
