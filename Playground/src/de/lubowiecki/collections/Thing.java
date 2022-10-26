@@ -1,8 +1,15 @@
 package de.lubowiecki.collections;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Thing implements Comparable<Thing> {
+// Serializable ist ein Markerinterface
+// d.h. es müssen keine Methoden überschrieben werden
+// Es markiert ein Objekt als serialisierbar
+public class Thing implements Serializable, Comparable<Thing> {
+
+	// Optionale Versions-ID
+	private static final long serialVersionUID = 217690965543594733L;
 
 	private String name;
 	

@@ -1,8 +1,9 @@
 package de.lubowiecki.uebung4;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class PershableProduct extends Product {
+public class PershableProduct extends Product implements Serializable {
 
 	private final LocalDate expiryDate;
 
