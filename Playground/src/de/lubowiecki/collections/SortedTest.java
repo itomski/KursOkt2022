@@ -63,6 +63,10 @@ public class SortedTest {
 		
 		// Zwei Objekte sind für Java gleich, wenn sie den gleichen HashCode haben und equals true ergibt
 		// Für ein TreeSet sind auch zwei Objekte die beim Vergleich mit compareTo 0 liefern gleich
+		
+		// seit Java 1.8, Lambdas
+		// int compare(T o1, T o2);
+		Collections.sort(sortSachen, (a, b) -> a.getName().compareTo(b.getName())); 
 	}
 }
 
