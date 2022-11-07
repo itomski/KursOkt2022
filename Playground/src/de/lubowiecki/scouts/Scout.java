@@ -1,6 +1,7 @@
 package de.lubowiecki.scouts;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Scout implements Comparable<Scout> {
 	
@@ -85,12 +86,31 @@ public class Scout implements Comparable<Scout> {
 //		
 //		return 0;
 		
+		
+		
 		return s.height - height;
 		
 	}
-	
-//	public int compareTo(Scout o) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
+
+	@Override
+	public int hashCode() {
+		System.out.println("HashCode");
+		
+		return Objects.hash(firstName, lastName);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		System.out.println("EQUALS");
+		
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Scout other = (Scout) obj;
+		return Objects.equals(firstName, other.firstName) && Objects.equals(lastName, other.lastName);
+	}
 }

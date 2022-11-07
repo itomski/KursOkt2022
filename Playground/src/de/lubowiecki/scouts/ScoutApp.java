@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ScoutApp {
@@ -55,12 +56,17 @@ public class ScoutApp {
 		scoutsList.add(s3);
 		scoutsList.add(s4);
 		
-		Collections.sort(scoutsList);
+		Comparator<Scout> compNachVorname = (a, b) -> a.getFirstName().compareTo(b.getFirstName());
+		Comparator<Scout> compNachNachname = (a, b) -> a.getLastName().compareTo(b.getLastName());
 		
-		for(Scout s : scoutsList) {
-			System.out.println(s.getHeight());
-		}
+		Collections.sort(scoutsList, compNachVorname.thenComparing(compNachNachname));
 		
+		Scout search = new Scout("Carol", "Danvers", null, 0);
+		//System.out.println(Collections.binarySearch(scoutsList, search));
+		
+//		for(Scout s : scoutsList) {
+//			System.out.println(s.getHeight());
+//		}
 	}
 
 }
