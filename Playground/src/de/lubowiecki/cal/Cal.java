@@ -16,7 +16,7 @@ public class Cal {
 		this.termine.put(datum, titel);
 	}
 	
-	// Refactoring
+	// Refactoring 
 	private String getTermineAsString() {
 		
 		StringBuilder output = new StringBuilder(termine.size() * 30);
