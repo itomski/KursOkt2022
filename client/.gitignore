@@ -1,0 +1,4 @@
+.classpath
+.project
+./client/*
+./client/target/*
