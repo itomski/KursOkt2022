@@ -6,6 +6,8 @@ import java.time.LocalDate;
 // Model
 public class Product implements Serializable {
 	
+	private static final long serialVersionUID = 7273045516007784747L;
+	
 	private String name;
 	private String description;
 	private int amount;

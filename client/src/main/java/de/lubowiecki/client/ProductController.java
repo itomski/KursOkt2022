@@ -53,8 +53,9 @@ public class ProductController implements Initializable { // Initializable biete
 //    	}
 //    	output.setText(sb.toString());
     	
-    	List<Product> productList = management.getAll();
-    	tblProducts.setItems(FXCollections.observableList(productList));
+    	//List<Product> productList = management.getAll();
+    	//tblProducts.setItems(FXCollections.observableList(productList));
+    	tblProducts.setItems(FXCollections.observableList(management.getAll()));
     }
     
     private void clearForm() {
