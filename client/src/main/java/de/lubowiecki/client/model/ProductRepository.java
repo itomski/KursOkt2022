@@ -63,5 +63,10 @@ public class ProductRepository {
 			e.printStackTrace();
 		}
 	}
+
+	public void delete(Product p) {
+		products.remove(p);
+		saveToFile();
+	}
 	
 }

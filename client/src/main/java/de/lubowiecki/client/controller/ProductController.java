@@ -49,22 +49,20 @@ public class ProductController implements Initializable { // Initializable biete
     }
     
     private void show() {
-//    	String row = "%s, %s, %s, %d, %.2f \n";
-//    	
-//    	StringBuilder sb = new StringBuilder();
-//    	for(Product p : management.getAll()) {
-//    		sb.append(String.format(row, p.getName(), p.getDescription(), p.getCreatedAt(), p.getAmount(), p.getPrice()));
-//    	}
-//    	output.setText(sb.toString());
-    	
-    	//List<Product> productList = management.getAll();
-    	//tblProducts.setItems(FXCollections.observableList(productList));
     	tblProducts.setItems(FXCollections.observableList(management.getAll()));
     }
     
     @FXML
     private void switchToNext() throws IOException {
     	App.setRoot("next");
+    }
+    
+    @FXML
+    private void delete() {
+    	// TODO: Exception fangen
+    	Product p = tblProducts.getSelectionModel().getSelectedItem();
+    	management.delete(p);
+    	show();
     }
     
     private void clearForm() {

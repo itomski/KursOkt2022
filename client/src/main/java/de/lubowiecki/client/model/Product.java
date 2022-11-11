@@ -3,6 +3,8 @@ package de.lubowiecki.client.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import de.lubowiecki.client.utils.ViewHelper;
+
 // Model
 public class Product implements Serializable {
 	
@@ -45,6 +47,10 @@ public class Product implements Serializable {
 	public double getPrice() {
 		return price;
 	}
+	
+	public String getPriceDE() {
+		return String.format("%.2f", price);
+	}
 
 	public void setPrice(double price) {
 		this.price = price;
@@ -52,6 +58,10 @@ public class Product implements Serializable {
 
 	public LocalDate getCreatedAt() {
 		return createdAt;
+	}
+	
+	public String getCreatedAtDE() {
+		return createdAt.format(ViewHelper.DATE_FMT);
 	}
 
 	public void setCreatedAt(LocalDate createdAt) {
