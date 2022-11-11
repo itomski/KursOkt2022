@@ -67,7 +67,7 @@ public class ProductController implements Initializable { // Initializable biete
     	App.setRoot("next");
     }
     
-    private void clearForm() {
+    private void clearForm() { // Komment
     	name.clear();
     	description.clear();
     	amount.clear();
