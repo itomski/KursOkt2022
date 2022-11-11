@@ -1,4 +1,4 @@
-package de.lubowiecki.client;
+package de.lubowiecki.client.utils;
 
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;

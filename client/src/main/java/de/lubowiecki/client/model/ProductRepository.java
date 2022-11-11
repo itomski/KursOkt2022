@@ -1,4 +1,4 @@
-package de.lubowiecki.client;
+package de.lubowiecki.client.model;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -13,13 +13,13 @@ import java.util.Collections;
 import java.util.List;
 
 // Model
-public class ProductManagement {
+public class ProductRepository {
 	
 	private static final String FILE_NAME = "data.ser";
 	
 	private List<Product> products;
 	
-	public ProductManagement() {
+	public ProductRepository() {
 		readFromFile();
 	}
 	

@@ -1,9 +1,13 @@
-package de.lubowiecki.client;
+package de.lubowiecki.client.controller;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import de.lubowiecki.client.App;
+import de.lubowiecki.client.model.Product;
+import de.lubowiecki.client.model.ProductRepository;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -30,7 +34,7 @@ public class ProductController implements Initializable { // Initializable biete
 	@FXML
 	private TableView<Product> tblProducts;
 	
-	private ProductManagement management = new ProductManagement();
+	private ProductRepository management = new ProductRepository();
 
     @FXML
     private void save() throws IOException {
@@ -56,6 +60,11 @@ public class ProductController implements Initializable { // Initializable biete
     	//List<Product> productList = management.getAll();
     	//tblProducts.setItems(FXCollections.observableList(productList));
     	tblProducts.setItems(FXCollections.observableList(management.getAll()));
+    }
+    
+    @FXML
+    private void switchToNext() throws IOException {
+    	App.setRoot("next");
     }
     
     private void clearForm() {

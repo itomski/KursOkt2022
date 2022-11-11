@@ -1,4 +1,4 @@
-package de.lubowiecki.client;
+package de.lubowiecki.client.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
