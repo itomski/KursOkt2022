@@ -47,7 +47,7 @@ public class UserRepository {
 				Statement stmt = con.createStatement()) {
 			
 			// Relationale-Daten aus der DB abfragen
-			ResultSet results = stmt.executeQuery("SELECT * FROM users");
+			ResultSet results = stmt.executeQuery("SELECT * FROM users"); // TODO
 			
 			while(results.next()) {
 				// Relationale-Daten in User-Objekte verpacken und in eine Liste ablegen
