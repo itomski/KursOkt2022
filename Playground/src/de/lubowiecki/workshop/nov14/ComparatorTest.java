@@ -15,7 +15,7 @@ public class ComparatorTest {
 		Person p3 = new Person("Peter", "Parker", 25);
 		Person p4 = new Person("Natasha", "Romanov", 31);
 		
-		List<Person> personen = new ArrayList<>() {
+		List<Person> personen = new ArrayList<Person>() {
 			{
 				add(p1);
 				add(p2);
