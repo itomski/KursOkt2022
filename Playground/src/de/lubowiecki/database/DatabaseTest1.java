@@ -37,13 +37,13 @@ public class DatabaseTest1 {
 //			
 //			System.out.println(user);
 			
-			User old = repo.findById(9);
-			old.setFirstname("Bob");
-			if(repo.save(old)) {
-				System.out.println("Geändert");
-			}
-			
-			// Alle abfragen
+//			User old = repo.findById(9);
+//			old.setFirstname("Bob");
+//			if(repo.save(old)) {
+//				System.out.println("Geändert");
+//			}
+//			
+//			// Alle abfragen
 			List<User> users = repo.find();
 			for(User u : users) {
 				System.out.println(u.getId() + ": " + u.getFirstname() + " " + u.getLastname());
