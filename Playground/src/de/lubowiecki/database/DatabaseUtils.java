@@ -17,8 +17,8 @@ public class DatabaseUtils {
 		// NIO
 		Path dir = Paths.get(HOME_DIR);
 		try {
-			if(Files.notExists(dir)) {
-				Files.createDirectory(dir);
+			if(Files.notExists(dir)) { // Wenn myapp Ordner nicht da ist
+				Files.createDirectory(dir); // muss er erzeugt werden
 			}
 		}
 		catch(Exception e) {
