@@ -73,7 +73,7 @@ public class DatabaseTest1 {
 //			}
 			
 			// Update
-//			int num = stmt.executeUpdate("UPDATE users SET firstname = 'Hans' WHERE id = 1");
+//			int num = stmt.executeUpdate("UPDATE users SET firstname = 'Hans'  WHERE id = 1");
 //			if(num > 0) {
 //				System.out.println("Wurde geändert...");
 //			}

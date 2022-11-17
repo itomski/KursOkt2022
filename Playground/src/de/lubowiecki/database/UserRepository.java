@@ -51,8 +51,7 @@ public class UserRepository {
 			
 			while(results.next()) {
 				// Relationale-Daten in User-Objekte verpacken und in eine Liste ablegen
-				User u = new User(results.getInt("id"), results.getString("firstname"), results.getString("lastname"));
-				users.add(u);
+				users.add(create(results));
 			}
 		}
 		
@@ -68,11 +67,15 @@ public class UserRepository {
 			ResultSet results = stmt.executeQuery("SELECT * FROM users WHERE id = " + id);
 			
 			if(results.next()) {
-				return new User(results.getInt("id"), results.getString("firstname"), results.getString("lastname"));
+				return create(results);
 			}
 			
 			// TODO: statt NULL lieber ein Optional zurückgeben
 			return null;
 		}
+	}
+	
+	private User create(ResultSet result) throws SQLException {
+		return new User(result.getInt("id"), result.getString("firstname"), result.getString("lastname"));
 	}
 }
