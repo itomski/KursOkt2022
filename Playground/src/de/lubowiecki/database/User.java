@@ -3,9 +3,7 @@ package de.lubowiecki.database;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public class User {
-	
-	private int id;
+public class User extends AbstractEntity {
 	
 	private String firstname;
 	
@@ -21,15 +19,7 @@ public class User {
 	
 	public User(int id, String firstname, String lastname) {
 		this(firstname, lastname);
-		this.id = id;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+		setId(id);
 	}
 
 	public String getFirstname() {

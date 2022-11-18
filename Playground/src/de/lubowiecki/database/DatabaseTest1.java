@@ -13,6 +13,9 @@ public class DatabaseTest1 {
 		
 		
 		try {
+			//TodoRepository repoTodo = new TodoRepository();
+			
+			
 			UserRepository repo = new UserRepository();
 			
 			// DELETE
@@ -20,13 +23,13 @@ public class DatabaseTest1 {
 //				System.out.println("Gelöscht");
 //			}
 			
-			User user = new User("Peter", "Parker");
+//			User user = new User("Peter", "Parker");
 //			System.out.println(user);
 //			
 //			// INSERT
-			if(repo.save(user)) {
-				System.out.println("Gespeichert");
-			}
+//			if(repo.save(user)) {
+//				System.out.println("Gespeichert");
+//			}
 			
 //			System.out.println(user);
 //			
@@ -38,11 +41,11 @@ public class DatabaseTest1 {
 //			
 //			System.out.println(user);
 			
-//			User old = repo.findById(9);
-//			old.setFirstname("Bob");
-//			if(repo.save(old)) {
-//				System.out.println("Geändert");
-//			}
+			User old = repo.findById(4);
+			old.setFirstname("Bob");
+			if(repo.save(old)) {
+				System.out.println("Geändert");
+			}
 //			
 //			// Alle abfragen
 			List<User> users = repo.find();
