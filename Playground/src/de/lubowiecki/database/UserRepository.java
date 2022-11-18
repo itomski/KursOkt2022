@@ -13,6 +13,10 @@ public class UserRepository {
 	
 	private static final String TABLE = "users";
 	
+	public UserRepository() throws SQLException {
+		createTable(); // Tabelle wird, wenn sie noch nicht da ist, erzeugt
+	}
+	
 	/**
 	 * Speichert ein User-Objekt als Datensatz in der Datenbank.
 	 * Enthält das Objekt eine ID größer als 0 findet eine Update statt.
@@ -99,6 +103,7 @@ public class UserRepository {
 		try(Connection con = DatabaseUtils.getConnection();
 				Statement stmt = con.createStatement()) {
 			
+			// executeUpdate liefert die Anzahl betroffener Datensätze
 			return stmt.executeUpdate(SQL) > 0;
 		}
 	}
@@ -146,6 +151,7 @@ public class UserRepository {
 		try(Connection con = DatabaseUtils.getConnection();
 				Statement stmt = con.createStatement()) {
 			
+			// executeQuery liefert immer ein ResultSet zurück
 			ResultSet results = stmt.executeQuery(SQL);
 			
 			if(results.next()) {
@@ -165,5 +171,23 @@ public class UserRepository {
 	 */
 	private User create(ResultSet result) throws SQLException {
 		return new User(result.getInt("id"), result.getString("firstname"), result.getString("lastname"));
+	}
+	
+	
+	private void createTable() throws SQLException {
+		
+		final String SQL = "CREATE TABLE IF NOT EXISTS " + TABLE + " ("
+						 		+ "id INTEGER, "
+						 		+ "firstname TEXT NOT NULL, "
+						 		+ "lastname TEXT NOT NULL, "
+						 		+ "PRIMARY KEY(id AUTOINCREMENT)"
+						 + ")";
+		
+		try(Connection con = DatabaseUtils.getConnection();
+				Statement stmt = con.createStatement()) {
+			
+			// execute führt eine beliebige Anweisung aus
+			stmt.execute(SQL);
+		}
 	}
 }

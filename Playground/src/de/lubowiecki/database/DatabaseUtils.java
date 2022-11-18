@@ -9,6 +9,7 @@ import java.sql.SQLException;
 
 public class DatabaseUtils {
 	
+	// Ablage im myapp-Verzeichnis im Benutzerverzeichnis
 	public static final String HOME_DIR = System.getProperty("user.home") + "/myapp";
 	
 	private static final String URL = "jdbc:sqlite:" + HOME_DIR + "/data.db";

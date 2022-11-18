@@ -11,21 +11,22 @@ public class DatabaseTest1 {
 		// JPA: Java Persistence API
 		// Implementierungen: Hibernate, EclipseLink, Apache OpenJPA
 		
-		UserRepository repo = new UserRepository();
+		
 		try {
+			UserRepository repo = new UserRepository();
 			
 			// DELETE
 //			if(repo.delete(5)) {
 //				System.out.println("Gelöscht");
 //			}
 			
-//			User user = new User("Natasha", "Romanov");
+			User user = new User("Peter", "Parker");
 //			System.out.println(user);
 //			
 //			// INSERT
-//			if(repo.save(user)) {
-//				System.out.println("Gespeichert");
-//			}
+			if(repo.save(user)) {
+				System.out.println("Gespeichert");
+			}
 			
 //			System.out.println(user);
 //			
@@ -53,9 +54,6 @@ public class DatabaseTest1 {
 //			User u = repo.findById(3);
 //			System.out.println(u.getFirstname() + " " + u.getLastname());
 			
-		}
-		catch (UnsupportedOperationException e) {
-			System.out.println("Funktion ist noch nicht eingebaut.");
 		}
 		catch (Exception e) {
 			System.out.println("Probleme: " + e.getMessage());
