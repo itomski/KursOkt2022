@@ -47,6 +47,25 @@ public class OperatorenTest {
 		System.out.println((int) ch);
 		
 		sum = ch;
+		
+		// OR
+		System.out.println(true | true); // einer oder beide können true sein = true
+		
+		// XOR - Exclusive-Or
+		System.out.println(true ^ true); // nur einer von beiden darf true sein = true
+		
+		// AND
+		System.out.println(true & false); // beide müssen true sein = true
+		
+		String str = null;
+		
+		// Hier darf der zweite Teil nicht ausgeführt werden, wenn str == null
+		// Da es sonst eine NullPointerException gibt. Daher verwendet man hier das Short-Cicuit-Und
+		if(str != null && str.length() > 10) { 
+			//...
+		}
+		
+		
 	}
 
 }
