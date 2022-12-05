@@ -9,21 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+// Enthält die Datenhaltung
 public class ImmobilienRepository {
 	
 	private static final String TABLE = "immobilien";
 	
 
-	public void showAll() throws SQLException {
-		
-		for(Immobilie i : getAll()) {
-			System.out.println(i.getId());
-			System.out.println(i.getTitel());
-			System.out.println(i.getBeschreibung());
-			System.out.println(i.getGroesse());
-			System.out.println(i.getPreis());
-			System.out.println();
-		}
+	public ImmobilienRepository() throws SQLException  {
+		createTable();
 	}
 	
 	public boolean insert(Immobilie immo) throws SQLException {
@@ -50,11 +43,19 @@ public class ImmobilienRepository {
 		}
 	}
 	
-	public List<Immobilie> getAll() throws SQLException {
+	public List<Immobilie> getAll(boolean desc, String... cols) throws SQLException {
 		
 		try(Connection dbh = DatabaseUtils.createConnection(); Statement stmt = dbh.createStatement()) {
-					
-			final String SQL = "SELECT * FROM " + TABLE;
+			
+			String order = "";
+			
+			if(cols.length > 0) {
+				order += " ORDER BY ";
+				order += String.join(",", cols);
+				order += (desc) ? " DESC" : "";
+			}	
+				
+			final String SQL = "SELECT * FROM " + TABLE + order;
 			
 			ResultSet results = stmt.executeQuery(SQL);
 			
@@ -99,6 +100,23 @@ public class ImmobilienRepository {
 //			return null;
 //		}
 //	}
+	
+	public boolean createTable() throws SQLException {
+		
+		try(Connection dbh = DatabaseUtils.createConnection(); Statement stmt = dbh.createStatement()) {
+					
+			final String SQL = "CREATE TABLE IF NOT EXISTS " + TABLE + " ("
+								 + "id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+								 + "titel VARCHAR(50),"
+								 + "beschreibung TEXT,"
+								 + "groesse MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',"
+								 + "preis DOUBLE UNSIGNED NOT NULL DEFAULT '0'"
+							 + ")";
+			
+			return stmt.executeUpdate(SQL) > 0;
+		}
+	}
+	
 	
 	
 	public Immobilie create(ResultSet result) throws SQLException {

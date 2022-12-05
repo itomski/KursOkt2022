@@ -1,16 +1,22 @@
 package de.lubowiecki.database.mysql;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Optional;
 
 public class MysqlConTestBetter {
 
 	public static void main(String[] args) {
 		
-		ImmobilienRepository repo = new ImmobilienRepository();
-		
 		try {
-			repo.showAll();
+//			ImmobilienRepository repo = new ImmobilienRepository();
+//			List<Immobilie> list = repo.getAll("xitel");
+			
+			ImmobilienService service = new ImmobilienService();
+//			
+			for(Immobilie i : service.getSortedByTitelDesc()) {
+				System.out.println(i.getTitel());
+			}
 			
 //			Immobilie i = repo.getOne(10);
 //			System.out.println(i.getTitel());

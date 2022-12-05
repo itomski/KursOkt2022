@@ -1,5 +1,6 @@
 package de.lubowiecki.database.mysql;
 
+// Enthält die Daten eines konkreten Datensatzes
 public class Immobilie {
 	
 	private long id;
