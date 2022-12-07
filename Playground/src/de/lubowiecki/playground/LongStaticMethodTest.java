@@ -16,13 +16,12 @@ public class LongStaticMethodTest {
 		i = Integer.parseInt("011"); // Verarbeitet nur Dezimal-Schreibweise und liefert ein int. Führende 0 wird ignoriert.
 		System.out.println(i);
 		
-		// 011 // Oktal -> 9
-		// 11 // Dezimal -> 11 
-		// 0b11 // Binär -> 3 
-		// 0x11 // Hexadezimal -> 17
+		// 0121 // Oktal -> 17 (0-7) (1 x 64 + 2 x 8 + 1 x 1)
+		// 11 // Dezimal -> 11 (1 x 10 + 1 x 1)
+		// 0b101 // Binär -> 5 (0 - 1)
+		// 0x23 // Hexadezimal -> 36 (0-9abcdef)  (2 x 16 + 1 x 3)
 		
 		int z = 011; // 9, da Oktal
-		
 		
 		StringBuilder sb = new StringBuilder(100);
 		sb.append("ABCDEFGH");
