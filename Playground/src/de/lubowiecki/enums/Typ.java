@@ -1,0 +1,7 @@
+package de.lubowiecki.enums;
+
+public enum Typ {
+
+	KLEINWAGEN, UNTERE_MITTELKLASSE, MITTELKLASSE, OBERE_MITTELKLASSE, OBERKLASSE;
+	
+}
