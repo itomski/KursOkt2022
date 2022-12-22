@@ -1,4 +1,4 @@
-package de.lubowiecki.wohkshop.dec20;
+package de.lubowiecki.workshop.dec20;
 
 import java.util.ArrayList;
 import java.util.List;

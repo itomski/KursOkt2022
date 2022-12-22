@@ -1,4 +1,4 @@
-package de.lubowiecki.wohkshop.dec21;
+package de.lubowiecki.workshop.dec21;
 
 import java.util.Random;
 
