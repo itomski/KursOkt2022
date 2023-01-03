@@ -21,6 +21,9 @@ public class Person implements Runnable {
 	public void setTarget(int x, int y) {
 		target = new Point(x, y);
 		wait = false;
+		synchronized (this) {
+			notify();
+		}
 	}
 
 	@Override
@@ -32,15 +35,20 @@ public class Person implements Runnable {
 			if(t.isInterrupted())
 				break;
 			
-			wait = move();
-			if(!wait) {
-				System.out.println(name + ": pos " + curPos);
-			}
-			else {
-				System.out.println(name + ": ziel erreicht. wartet");
-			}
-			
 			try {
+				wait = move();
+				
+				if(!wait) {
+					System.out.println(name + ": pos " + curPos);
+				}
+				else {
+					System.out.println(name + ": ziel erreicht. wartet");
+					
+					synchronized (this) {
+						wait();
+					}
+				}
+				
 				Thread.sleep(1000);
 			} 
 			catch (InterruptedException e) {
