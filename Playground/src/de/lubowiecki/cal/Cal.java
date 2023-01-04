@@ -1,5 +1,6 @@
 package de.lubowiecki.cal;
 
+import java.net.http.HttpClient;
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.TreeMap;

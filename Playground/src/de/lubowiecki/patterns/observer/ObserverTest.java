@@ -26,8 +26,8 @@ public class ObserverTest {
 		Random rand = new Random();
 		
 		while(true) {
-			aktie1.changePrice(rand.nextDouble(-0.1, 0.1));
-			aktie2.changePrice(rand.nextDouble(-0.05, 0.05));
+			aktie1.changePrice(rand.nextDouble());
+			aktie2.changePrice(rand.nextDouble());
 			
 			try {
 				Thread.sleep(5000);

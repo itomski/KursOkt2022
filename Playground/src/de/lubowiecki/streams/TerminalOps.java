@@ -23,7 +23,9 @@ public class TerminalOps {
 		Arrays.stream(ints).forEach(System.out::println);
 		
 		// toList, toArray
-		List<Integer> intList = Arrays.stream(ints).toList();
+		List<Integer> intList;
+		
+		//intList = Arrays.stream(ints).toList();
 		
 		// Die übrigen Elemente werden in ein Set/List/Collection gesammelt
 		Set<Integer> intSet = Arrays.stream(ints).collect(Collectors.toSet());
